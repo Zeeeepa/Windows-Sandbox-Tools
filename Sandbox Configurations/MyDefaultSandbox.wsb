@@ -11,7 +11,7 @@
 	<!-- Options for improved security -->
 	<VideoInput>Disable</VideoInput>
 	<AudioInput>Disable</AudioInput>
-	<PrinterRedirection>Disabled</PrinterRedirection>
+	<PrinterRedirection>Disable</PrinterRedirection>
 	<vGPU>Disable</vGPU>
 
 	
