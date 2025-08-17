@@ -7,6 +7,15 @@ param(
 
 #Set-PSDebug -Trace 1
 
+# ------ Check that we're running in the Windows Sandbox ------
+# This script is intended to be run from within the Windows Sandbox. We'll do a rudamentary check for if the current user is named "WDAGUtilityAccount"
+if ($env:USERNAME -ne "WDAGUtilityAccount") {
+    Write-host "`n`nERROR: This script is intended to be run from WITHIN the Windows Sandbox.`nIt appears you are running this from outside the sandbox.`n" -ForegroundColor Red
+    Write-host "`nPress Enter to exit." -ForegroundColor Yellow
+    Read-Host
+    exit
+}
+
 # Change context menu to old style
 reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
 
