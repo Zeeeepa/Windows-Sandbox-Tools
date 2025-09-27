@@ -48,4 +48,5 @@ It is written assuming it will be run from _within_ the sandbox, so to automatic
 3. Update any other options to your liking in the `.wsb` file, such as amount of RAM.
 4. Launch Sandbox using the configuration by double clicking `MyDefaultSandbox.wsb`. It will map the folder to the Desktop as a folder called `HostShared`, and run the script automatically. You can also add other scripts and things to the shared folder you may want to run manually.
 
-
+### More Personal Preference Tweaks For Your Startup Script
+For other commands and registry tweaks that are more just personal preference, I've created a [Wiki page](https://github.com/ThioJoe/Windows-Sandbox-Tools/wiki/More-Optional-Registry-Tweaks)
