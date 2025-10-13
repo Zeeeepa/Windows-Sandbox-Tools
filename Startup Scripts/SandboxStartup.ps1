@@ -108,7 +108,7 @@ If (($null -ne $notepadPath) -or ($null -ne $notepadPlusPlusPath)) {
 	If (!(Test-Path 'HKLM:\SOFTWARE\Classes\txtfile\shell\open\command')) { New-Item -Path 'HKLM:\SOFTWARE\Classes\txtfile\shell\open\command' -Force }
 	# Prefer Notepad++ if available, otherwise use Notepad
 	If ($null -ne $notepadPlusPlusPath) { 
-		Set-ItemProperty -Path 'HKLM:\SOFTWARE\Classes\txtfile\shell\open\command' -Name '(Default)' -Value ('"{0}" -settingsDir=%appdata% "%1"' -f $editorPath) -Type ExpandString -Force
+		Set-ItemProperty -Path 'HKLM:\SOFTWARE\Classes\txtfile\shell\open\command' -Name '(Default)' -Value ('"{0}" -settingsDir=%appdata% "%1"' -f $notepadPlusPlusPath) -Type ExpandString -Force
 	} Else {  # If Npp isn't available, condition above means we know notepadPath is still available
 		cmd /c ftype txtfile=`"$notepadPath`" "%1"
 	} 
